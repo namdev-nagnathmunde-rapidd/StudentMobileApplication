@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23C8D083-1E33-446B-8EAB-F737FA4C4BB6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentAppFirebase</RootNamespace>
+    <AssemblyName>StudentAppFirebase</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\FirebaseAuth.cs" />
+    <Compile Include="Auth\FirebaseAuthException.cs" />
+    <Compile Include="Auth\FirebaseAuthLink.cs" />
+    <Compile Include="Auth\FirebaseAuthProvider.cs" />
+    <Compile Include="Auth\FirebaseAuthType.cs" />
+    <Compile Include="Auth\FirebaseConfig.cs" />
+    <Compile Include="Auth\IFirebaseAuthProvider.cs" />
+    <Compile Include="Auth\User.cs" />
+    <Compile Include="Database\FirebaseClient.cs" />
+    <Compile Include="Database\FirebaseKeyGenerator.cs" />
+    <Compile Include="Database\FirebaseObject.cs" />
+    <Compile Include="Database\GlobalSuppressions.cs" />
+    <Compile Include="Database\Http\HttpClientExtensions.cs" />
+    <Compile Include="Database\Http\PostResult.cs" />
+    <Compile Include="Database\ObservableExtensions.cs" />
+    <Compile Include="Database\Offline\ExceptionEventArgs.cs" />
+    <Compile Include="Database\Offline\OfflineCacheAdapter.cs" />
+    <Compile Include="Database\Offline\OfflineEntry.cs" />
+    <Compile Include="Database\Offline\RealtimeDatabase.cs" />
+    <Compile Include="Database\Offline\SyncOptions.cs" />
+    <Compile Include="Database\Query\AuthQuery.cs" />
+    <Compile Include="Database\Query\ChildQuery.cs" />
+    <Compile Include="Database\Query\FilterQuery.cs" />
+    <Compile Include="Database\Query\FirebaseQuery.cs" />
+    <Compile Include="Database\Query\IFirebaseQuery.cs" />
+    <Compile Include="Database\Query\OrderQuery.cs" />
+    <Compile Include="Database\Query\ParameterQuery.cs" />
+    <Compile Include="Database\Query\QueryExtensions.cs" />
+    <Compile Include="Database\Query\QueryFactoryExtensions.cs" />
+    <Compile Include="Database\Streaming\FirebaseCache.cs" />
+    <Compile Include="Database\Streaming\FirebaseEvent.cs" />
+    <Compile Include="Database\Streaming\FirebaseEventType.cs" />
+    <Compile Include="Database\Streaming\FirebaseServerEventType.cs" />
+    <Compile Include="Database\Streaming\FirebaseSubscription.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyModel.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\LoginUser.cs" />
+    <Compile Include="Notification\PushNotification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestClientHandler\MyRestClient.cs" />
+    <Compile Include="ServicesHandler\MyModelServices.cs" />
+    <Compile Include="Token\StreamToken.cs" />
+    <Compile Include="Token\TokenGenerator.cs" />
+    <Compile Include="Token\TokenOptions.cs" />
+    <Compile Include="ViewModel\StudentDetailViewModel.cs" />
+    <Compile Include="ViewModel\VideoDetailPage.cs" />
+    <Compile Include="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManuPage.xaml.cs">
+      <DependentUpon>ManuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StudentDeailPage.xaml.cs">
+      <DependentUpon>StudentDeailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VideoDetailPage.xaml.cs">
+      <DependentUpon>VideoDetailPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="crypto">
+      <HintPath>bin\Debug\crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.ConsoleChat">
+      <HintPath>bin\Debug\Firebase.ConsoleChat.exe</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>bin\Debug\Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Xamarin">
+      <HintPath>bin\Debug\Firebase.Xamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="JWT">
+      <HintPath>bin\Debug\JWT.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>E:\Visualandxamarin\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StudentAppFirebase">
+      <HintPath>bin\Debug\StudentAppFirebase.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>E:\xamarin sample\Projects\StudentAppFirebase\StudentAppFirebase\StudentAppFirebase\bin\Debug\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reactive.Core.3.1.1\lib\netstandard1.0\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reactive.Interfaces.3.1.1\lib\netstandard1.0\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reactive.Linq.3.1.1\lib\netstandard1.0\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\VideoDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ManuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\StudentDeailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PutYourXamlPageHere.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

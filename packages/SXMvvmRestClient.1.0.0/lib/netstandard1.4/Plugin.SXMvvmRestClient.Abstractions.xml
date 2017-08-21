@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.SXMvvmRestClient.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.SXMvvmRestClient.Abstractions.ISXMvvmRestClient">
+            <summary>
+            Interface for SXMvvmRestClient
+            </summary>
+        </member>
+        <member name="M:Plugin.SXMvvmRestClient.Abstractions.ISXMvvmRestClient.Log(System.String)">
+            <summary>
+            Log a message
+            </summary>
+        </member>
+    </members>
+</doc>

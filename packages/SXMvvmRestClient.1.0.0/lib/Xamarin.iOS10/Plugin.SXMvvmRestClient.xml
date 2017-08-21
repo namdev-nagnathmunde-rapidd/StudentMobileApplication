@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.SXMvvmRestClient</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.SXMvvmRestClient.CrossSXMvvmRestClient">
+            <summary>
+            Cross platform SXMvvmRestClient implemenations
+            </summary>
+        </member>
+        <member name="P:Plugin.SXMvvmRestClient.CrossSXMvvmRestClient.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="T:Plugin.SXMvvmRestClient.SXMvvmRestClientImplementation">
+            <summary>
+            Implementation for SXMvvmRestClient
+            </summary>
+        </member>
+        <member name="M:Plugin.SXMvvmRestClient.SXMvvmRestClientImplementation.Log(System.String)">
+            <summary>
+            Log a message
+            </summary>
+        </member>
+    </members>
+</doc>

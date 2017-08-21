@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentAppFirebase.Views.ManuPage"
+                  xmlns:local="clr-namespace:StudentAppFirebase.Views">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Manu">
+
+            <StackLayout Orientation="Vertical">
+
+                <Button Text="StudentProfile" Clicked="Button_Clicked"/>
+                <Button Text="Video" Clicked="Button_Clicked_1"/>
+                <Button Text="Images" Clicked="Button_Clicked_2"/>
+
+                <Button Text="FeedBack" Clicked="Button_Clicked_3"/>
+
+                <Button Text="Logout" Clicked="Button_Clicked_4"/>
+
+
+
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <local:StudentDeailPage/>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
